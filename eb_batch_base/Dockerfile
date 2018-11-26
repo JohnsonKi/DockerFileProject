@@ -4,7 +4,13 @@ COPY ./conf /
 
 RUN chmod -R 777 entrypoint.sh
 RUN chmod -R 777 skilipaca.jar
+RUN yum update -y
 RUN yum install -y java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64
+RUN localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
+
+ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
+
+RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 VOLUME /usr/src/myapp
 
