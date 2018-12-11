@@ -27,7 +27,7 @@ RUN echo "list enable yum repository" && \
     yum repolist enabled
 
 RUN echo "Library Install" && \
-    yum install -y --enablerepo=remi,remi-php72 php php-devel php-mbstring php-pdo php-xml php-zip php-mysqlnd php-fpm
+    yum install -y --enablerepo=remi,remi-php72 php php-devel php-mbstring php-gd php-pdo php-xml php-zip php-mysqlnd php-fpm
 
 RUN echo "Composer Install" && \
     curl -sS https://getcomposer.org/installer | php && \
