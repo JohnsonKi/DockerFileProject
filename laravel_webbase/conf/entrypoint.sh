@@ -2,8 +2,14 @@
 
 #Laravel
 export PATH="~/.composer/vendor/bin:$PATH"
-cd /usr/src
-laravel new myapp
+
+if [[ -e /usr/src/myapp ]]; then
+    laravel new myapp
+else
+    cd /usr/src
+    git clone https://github.com/JohnsonKi/laravelhome.git myapp
+fi
+
 chown -R nginx:nginx /usr/src/myapp
 chmod -R 755 /usr/src/myapp
 
