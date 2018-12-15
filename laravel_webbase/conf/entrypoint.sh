@@ -3,12 +3,16 @@
 #Laravel
 export PATH="~/.composer/vendor/bin:$PATH"
 
-if [[ -e /usr/src/myapp ]]; then
-    laravel new myapp
-else
+#if [[ -e /usr/src/myapp ]]; then
+#    laravel new myapp
+#else
     cd /usr/src
-    git clone https://github.com/JohnsonKi/laravelhome.git myapp && cd /usr/src/myapp && composer install && cp .env.example .env && php artisan key:generate
-fi
+    git clone https://github.com/JohnsonKi/laravelhome.git myapp && \ 
+    cd /usr/src/myapp && \
+    composer install && \ 
+    cp .env.example .env && \ 
+    php artisan key:generate
+#fi
 
 chown -R nginx:nginx /usr/src/myapp
 chmod -R 755 /usr/src/myapp
