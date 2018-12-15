@@ -7,7 +7,7 @@ if [[ -e /usr/src/myapp ]]; then
     laravel new myapp
 else
     cd /usr/src
-    git clone https://github.com/JohnsonKi/laravelhome.git myapp && cd /usr/src/myapp && composer install
+    git clone https://github.com/JohnsonKi/laravelhome.git myapp && cd /usr/src/myapp && composer install && cp .env.example .env && php artisan key:generate
 fi
 
 chown -R nginx:nginx /usr/src/myapp
