@@ -64,6 +64,12 @@ RUN echo "Nginx Install" && \
 RUN echo "Nginx Version:" && \
     nginx -V
 
+RUN echo "Git Install" && \
+    yum install -y git
+
+RUN echo "Git Version:" && \
+    git --version
+
 RUN echo "Configure PHP-FPM" && \
     cp -f /root/www.conf /etc/php-fpm.d/
 
